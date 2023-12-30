@@ -9,16 +9,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Update="Forme\FormaZaUnosNaloga1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Forme\FormaZaUnosNaloga2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="DataBaza\" />
+    <Compile Update="Forme\FormaZaUnosNaloga1.cs" />
+    <Compile Update="Forme\FormaZaUnosNaloga2.cs" />
   </ItemGroup>
 
   <ItemGroup>

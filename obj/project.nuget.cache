@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "gIwwqIPgqmGbeMG/DMB180YMGgGhQuEAShWMvtCNmi99CClHlUaAomaQn/jdtI2NKjOo0vWztkWAtxWv+CFabA==",
+  "dgSpecHash": "Do7T8h/lYTOHjFM5jt6tf9glD434ph6T7ivDMIQB3SpXPuYeBaaGsr7tZIthShxVmpwb+dGra+hVa+SA26Q2SQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Lenovo.DESKTOP-7HJOOS6\\Desktop\\Objektno_Programiranje_projekt\\Projekt_Objektno_orjentirano_programiranje\\Objektno_programiranje_projekt\\ProjektOOP\\ProjektOOP.csproj",
+  "projectFilePath": "C:\\Users\\Lenovo.DESKTOP-7HJOOS6\\Desktop\\ProjektOOP\\ProjektOOP.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Lenovo.DESKTOP-7HJOOS6\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Lenovo.DESKTOP-7HJOOS6\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",

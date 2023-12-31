@@ -98,3 +98,4 @@ C:\Users\Lenovo.DESKTOP-7HJOOS6\Desktop\ProjektOOP\obj\Debug\net8.0-windows\refi
 C:\Users\Lenovo.DESKTOP-7HJOOS6\Desktop\ProjektOOP\obj\Debug\net8.0-windows\ProjektOOP.pdb
 C:\Users\Lenovo.DESKTOP-7HJOOS6\Desktop\ProjektOOP\obj\Debug\net8.0-windows\ProjektOOP.genruntimeconfig.cache
 C:\Users\Lenovo.DESKTOP-7HJOOS6\Desktop\ProjektOOP\obj\Debug\net8.0-windows\ref\ProjektOOP.dll
+C:\Users\Lenovo.DESKTOP-7HJOOS6\Desktop\ProjektOOP\obj\Debug\net8.0-windows\ProjektOOP.Forme.FormaZaUnosNaloga2.resources

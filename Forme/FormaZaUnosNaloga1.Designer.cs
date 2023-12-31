@@ -8,9 +8,8 @@ using System.Runtime.InteropServices;
 
 namespace ProjektOOP
 {
-    partial class FormaZaUnosNaloga1
+    partial class FormaZaUnosNaloga1:Form
     {
-        private string broj;
         private System.ComponentModel.IContainer components = null;
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
@@ -21,11 +20,12 @@ namespace ProjektOOP
             }
             base.Dispose(disposing);
         }
+        private string broj;
         #region Windows Form Designer generated code
         private void InitializeComponent()
         {
             Korisnik korisnik = new Korisnik("Rino", "Tomic", 1234, "Marinići 15a", "Rijeka", 385996319003, 123, 456);
-            string broj = korisnik.Pozivanje();
+            broj = korisnik.Pozivanje();
             this.buttonPrihvati = new System.Windows.Forms.Button();
             this.korisnickoIme = new System.Windows.Forms.TextBox();
             this.korisnickaLozinka = new System.Windows.Forms.TextBox();
@@ -42,10 +42,10 @@ namespace ProjektOOP
             this.buttonPrihvati.Size = new System.Drawing.Size(75, 23);
             this.buttonPrihvati.TabIndex = 0;
             this.buttonPrihvati.Text = "Prijavi se";
+            this.buttonPrihvati.Click+=new System.EventHandler(this.ButtonProvjera_Click);
             this.buttonPrihvati.Click += new System.EventHandler(this.ButtonPrihvati_Click);
             // 
             // korisnickoIme
-            // 
             this.korisnickoIme.Location = new System.Drawing.Point(147, 27);
             this.korisnickoIme.Name = "korisnickoIme";
             this.korisnickoIme.Size = new System.Drawing.Size(100, 20);

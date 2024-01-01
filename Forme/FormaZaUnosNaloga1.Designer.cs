@@ -57,6 +57,7 @@ namespace ProjektOOP
             this.korisnickaLozinka.Name = "korisnickaLozinka";
             this.korisnickaLozinka.Size = new System.Drawing.Size(100, 20);
             this.korisnickaLozinka.TabIndex = 2;
+            this.korisnickaLozinka.PasswordChar = '*';
             // 
             // KorisnickoImeText
             // 

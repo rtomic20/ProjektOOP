@@ -8,5 +8,8 @@
     <Compile Update="Forme\FormaZaUnosNaloga2.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forme\FormaZaUnosNaloga3.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

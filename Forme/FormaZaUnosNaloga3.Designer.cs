@@ -16,7 +16,7 @@
         {
             SuspendLayout();
             // 
-            // FormaZaUnosNaloga2
+            // FormaZaUnosNaloga3
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -24,7 +24,7 @@
             ClientSize = new Size(800, 564);
             ForeColor = SystemColors.Highlight;
             MaximizeBox = false;
-            Name = "FormaZaUnosNaloga2";
+            Name = "FormaZaUnosNaloga3";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Unos naloga";
             ResumeLayout(false);

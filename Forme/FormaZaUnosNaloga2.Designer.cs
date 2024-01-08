@@ -5,7 +5,7 @@ using Npgsql;
 using System.Data;
 namespace ProjektOOP.Forme
 {
-    partial class FormaZaUnosNaloga2
+    partial class FormaZaUnosNaloga2 : Form
     {
         private System.ComponentModel.IContainer components = null;
 
@@ -17,9 +17,9 @@ namespace ProjektOOP.Forme
             }
             base.Dispose(disposing);
         }
-        private string Connection = String.Format("Server{0};Port={1};User Id={2};Password={3};Database{4};"
-                , "localhost", 5432, "postgres", "kodiriki17112905", "DataBazaZaUnosNaloga"
-            );
+        private string Connection = String.Format("Server={0};Port={1};User Id={2};Password={3};Database={4};"
+        , "localhost", 5432, "postgres", "1234", "DataBazaZaUnosNaloga"
+        );
         private NpgsqlConnection conn;
         private string sql;
         private NpgsqlCommand cmd;
@@ -64,21 +64,31 @@ namespace ProjektOOP.Forme
             ((System.ComponentModel.ISupportInitialize)PrikazInformacija).EndInit();
             ResumeLayout(false);
         }
+
         private void Konekcija(object sender, EventArgs e)
-        {
+         {
             conn=new NpgsqlConnection(Connection);
             Select();
         }
         private void Select()
         {
-            conn.Open();
-            sql=@"select*from nalog";
-            cmd=new NpgsqlCommand(sql, conn);
-            dt = new DataTable();
-            dt.Load(cmd.ExecuteReader());
-            conn.Close();
-            PrikazInformacija.DataSource=null;
-            PrikazInformacija.DataSource=dt;
+            try
+            {
+                conn.Open();
+                sql=@"SELECT * FROM UcitajPodatkeZaPrikaz();";
+                cmd=new NpgsqlCommand(sql, conn);
+                dt = new DataTable();
+                dt.Load(cmd.ExecuteReader());
+                conn.Close();
+                PrikazInformacija.DataSource=null;
+                PrikazInformacija.DataSource=dt;
+            }
+            catch (Exception ex)
+            {
+               
+                MessageBox.Show($"Error: {ex.Message}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                conn.Close();
+            }
         }
         private void DodajElementUBazu(object sender, EventArgs e)
         {

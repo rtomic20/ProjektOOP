@@ -31,6 +31,7 @@ namespace ProjektOOP.Forme
             PrikazInformacija = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)PrikazInformacija).BeginInit();
             SuspendLayout();
+            Konekcija(this.PrikazInformacija,EventArgs.Empty);
             // 
             // DugmeDodaj
             // 
@@ -53,7 +54,7 @@ namespace ProjektOOP.Forme
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.GradientInactiveCaption;
-            ClientSize = new Size(800, 564);
+            ClientSize = new Size(808, 564);
             Controls.Add(DugmeDodaj);
             Controls.Add(PrikazInformacija);
             ForeColor = SystemColors.Highlight;

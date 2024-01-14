@@ -16,5 +16,10 @@ namespace ProjektOOP.Forme
         {
             InitializeComponent();
         }
+
+        private void FormaZaUnosNaloga3_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

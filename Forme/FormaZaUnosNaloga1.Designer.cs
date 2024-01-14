@@ -6,11 +6,13 @@ using System.Security.Cryptography.X509Certificates;
 using System.Runtime.InteropServices;
 using Npgsql;
 using System.Data;
+using System.Runtime.CompilerServices;
+using static System.Windows.Forms.DataFormats;
 
 
 namespace ProjektOOP
 {
-    partial class FormaZaUnosNaloga1:Form
+    partial class FormaZaUnosNaloga1 : Form
     {
         private System.ComponentModel.IContainer components = null;
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
@@ -23,7 +25,7 @@ namespace ProjektOOP
             base.Dispose(disposing);
         }
         private string Connection = String.Format("Server={0};Port={1};User Id={2};Password={3};Database={4};"
-        ,"localhost", 5432, "postgres", "1234", "Korisnicka_imena_i_lozinke"
+        , "localhost", 5432, "postgres", "1234", "Korisnicka_imena_i_lozinke"
         );
         private NpgsqlConnection conn;
         private string sql;
@@ -32,15 +34,12 @@ namespace ProjektOOP
         #region Windows Form Designer generated code
         private void InitializeComponent()
         {
-            Random random = new Random();
-            int devetoznamenkastiBroj = random.Next(100000000, 1000000000);
-            buttonPrihvati = new Button();
-            korisnickoIme = new TextBox();
-            korisnickaLozinka = new TextBox();
+            buttonPrihvati = new System.Windows.Forms.Button();
+            korisnickoIme = new System.Windows.Forms.TextBox();
+            korisnickaLozinka = new System.Windows.Forms.TextBox();
             KorisnickoImeText = new System.Windows.Forms.Label();
             LozinkaText = new System.Windows.Forms.Label();
-            brojPozivanja = new System.Windows.Forms.Label();
-            PrikaziZaporku = new CheckBox();
+            PrikaziZaporku = new System.Windows.Forms.CheckBox();
             Konekcija();
             SuspendLayout();
             // 
@@ -89,15 +88,6 @@ namespace ProjektOOP
             LozinkaText.TabIndex = 4;
             LozinkaText.Text = "Lozinka:";
             // 
-            // brojPozivanja
-            // 
-            brojPozivanja.Location = new Point(72, 5);
-            brojPozivanja.Margin = new Padding(4, 0, 4, 0);
-            brojPozivanja.Name = "brojPozivanja";
-            brojPozivanja.Size = new Size(197, 23);
-            brojPozivanja.TabIndex = 5;
-            brojPozivanja.Text = "Broj pozivanja je:385{devetoznamenkastiBroj}";
-            // 
             // PrikaziZaporku
             // 
             PrikaziZaporku.Location = new Point(172, 90);
@@ -113,21 +103,19 @@ namespace ProjektOOP
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.GradientInactiveCaption;
-            ClientSize = new Size(379, 165);
             Controls.Add(buttonPrihvati);
             Controls.Add(korisnickoIme);
             Controls.Add(korisnickaLozinka);
             Controls.Add(KorisnickoImeText);
             Controls.Add(LozinkaText);
-            Controls.Add(brojPozivanja);
             Controls.Add(PrikaziZaporku);
+            ClientSize = new Size(379, 165);
             ForeColor = SystemColors.Highlight;
             Margin = new Padding(4, 3, 4, 3);
             MaximizeBox = false;
             Name = "FormaZaUnosNaloga1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Forma za unos naloga";
-            Load += FormaZaUnosNaloga_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -167,7 +155,6 @@ namespace ProjektOOP
                 }
             }
         }
-
         private void ButtonPrihvati_Click(object sender, EventArgs e)
         {
             string unesenoKorisnickoIme = korisnickoIme.Text;
@@ -176,6 +163,7 @@ namespace ProjektOOP
             {
                 FormaZaUnosNaloga2 forma = new FormaZaUnosNaloga2();
                 forma.Show();
+                forma.FormClosed += BrisanjePozadine;
                 this.Hide();
             }
             else
@@ -194,12 +182,15 @@ namespace ProjektOOP
                 korisnickaLozinka.PasswordChar = '\u2022';
             }
         }
+        private void BrisanjePozadine(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
         private System.Windows.Forms.CheckBox PrikaziZaporku;
         private System.Windows.Forms.Button buttonPrihvati;
         private System.Windows.Forms.TextBox korisnickoIme;
         private System.Windows.Forms.TextBox korisnickaLozinka;
         private System.Windows.Forms.Label KorisnickoImeText;
         private System.Windows.Forms.Label LozinkaText;
-        private System.Windows.Forms.Label brojPozivanja;
     }
 }

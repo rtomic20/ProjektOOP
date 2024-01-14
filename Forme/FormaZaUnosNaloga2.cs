@@ -16,5 +16,9 @@ namespace ProjektOOP.Forme
         {
             InitializeComponent();
         }
+
+        private void Pretraga_TextChanged(object sender, EventArgs e)
+        {
+        }
     }
 }

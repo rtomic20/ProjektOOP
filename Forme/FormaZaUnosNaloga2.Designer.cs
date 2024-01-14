@@ -24,18 +24,21 @@ namespace ProjektOOP.Forme
         private string sql;
         private NpgsqlCommand cmd;
         private DataTable dt;
+        private bool pretragaUnesena = false;
         #region Windows Form Designer generated code
         private void InitializeComponent()
         {
             DugmeDodaj = new Button();
             PrikazInformacija = new DataGridView();
+            Pretraga = new TextBox();
+            PretragaDugme = new Button();
             ((System.ComponentModel.ISupportInitialize)PrikazInformacija).BeginInit();
-            SuspendLayout();
             Konekcija(this.PrikazInformacija,EventArgs.Empty);
+            SuspendLayout();
             // 
             // DugmeDodaj
             // 
-            DugmeDodaj.Location = new Point(713, 482);
+            DugmeDodaj.Location = new Point(876, 486);
             DugmeDodaj.Name = "DugmeDodaj";
             DugmeDodaj.Size = new Size(75, 23);
             DugmeDodaj.TabIndex = 0;
@@ -46,17 +49,39 @@ namespace ProjektOOP.Forme
             // 
             PrikazInformacija.Location = new Point(12, 70);
             PrikazInformacija.Name = "PrikazInformacija";
-            PrikazInformacija.Size = new Size(776, 392);
+            PrikazInformacija.Size = new Size(948, 392);
             PrikazInformacija.TabIndex = 1;
+            // 
+            // Pretraga
+            // 
+            Pretraga.ForeColor = SystemColors.GrayText;
+            Pretraga.Location = new Point(646, 32);
+            Pretraga.Name = "Pretraga";
+            Pretraga.Size = new Size(215, 23);
+            Pretraga.TabIndex = 2;
+            Pretraga.Text = "Unesi pretragu";
+            Pretraga.TextChanged += Pretraga_TextChanged;
+            Pretraga.Enter += Pretraga_Unos;
+            Pretraga.Leave += Pretraga_Odlazak;
+            // 
+            // PretragaDugme
+            // 
+            PretragaDugme.Location = new Point(876, 31);
+            PretragaDugme.Name = "PretragaDugme";
+            PretragaDugme.Size = new Size(75, 23);
+            PretragaDugme.TabIndex = 3;
+            PretragaDugme.Text = "Pretraga";
             // 
             // FormaZaUnosNaloga2
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.GradientInactiveCaption;
-            ClientSize = new Size(808, 564);
+            ClientSize = new Size(972, 564);
             Controls.Add(DugmeDodaj);
             Controls.Add(PrikazInformacija);
+            Controls.Add(Pretraga);
+            Controls.Add(PretragaDugme);
             ForeColor = SystemColors.Highlight;
             MaximizeBox = false;
             Name = "FormaZaUnosNaloga2";
@@ -64,6 +89,7 @@ namespace ProjektOOP.Forme
             Text = "Ispis naloga";
             ((System.ComponentModel.ISupportInitialize)PrikazInformacija).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         private void Konekcija(object sender, EventArgs e)
@@ -76,7 +102,7 @@ namespace ProjektOOP.Forme
             try
             {
                 conn.Open();
-                sql=@"SELECT * FROM UcitajPodatkeZaPrikaz();";
+                sql=@"SELECT * FROM UcitajPodatke();";
                 cmd=new NpgsqlCommand(sql, conn);
                 dt = new DataTable();
                 dt.Load(cmd.ExecuteReader());
@@ -96,8 +122,28 @@ namespace ProjektOOP.Forme
             FormaZaUnosNaloga3 forma = new FormaZaUnosNaloga3();
             forma.Show();
         }
+        private void Pretraga_Unos(object sender, EventArgs e)
+        {
+            if (!pretragaUnesena)
+            {
+                Pretraga.Text = "";
+                Pretraga.ForeColor = SystemColors.WindowText;
+                pretragaUnesena = true;
+            }
+        }
+        private void Pretraga_Odlazak(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(Pretraga.Text))
+            {
+                Pretraga.Text = "Unesi pretragu";
+                Pretraga.ForeColor = SystemColors.GrayText;
+                pretragaUnesena = false;
+            }
+        }
         #endregion
         private System.Windows.Forms.Button DugmeDodaj;
         private System.Windows.Forms.DataGridView PrikazInformacija;
+        private System.Windows.Forms.TextBox Pretraga;
+        private System.Windows.Forms.Button PretragaDugme;
     }
 }

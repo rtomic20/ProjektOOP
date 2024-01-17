@@ -21,5 +21,20 @@ namespace ProjektOOP.Forme
         {
 
         }
+
+        private void Greska_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Prezime_korisnika_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Adresa_stanovanja_korisnika_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

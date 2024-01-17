@@ -33,12 +33,12 @@ namespace ProjektOOP.Forme
             Pretraga = new TextBox();
             PretragaDugme = new Button();
             ((System.ComponentModel.ISupportInitialize)PrikazInformacija).BeginInit();
-            Konekcija(this.PrikazInformacija,EventArgs.Empty);
+            Konekcija(this.PrikazInformacija, EventArgs.Empty);
             SuspendLayout();
             // 
             // DugmeDodaj
             // 
-            DugmeDodaj.Location = new Point(876, 486);
+            DugmeDodaj.Location = new Point(879, 493);
             DugmeDodaj.Name = "DugmeDodaj";
             DugmeDodaj.Size = new Size(75, 23);
             DugmeDodaj.TabIndex = 0;
@@ -49,13 +49,14 @@ namespace ProjektOOP.Forme
             // 
             PrikazInformacija.Location = new Point(12, 70);
             PrikazInformacija.Name = "PrikazInformacija";
-            PrikazInformacija.Size = new Size(948, 392);
+            PrikazInformacija.ScrollBars = ScrollBars.None;
+            PrikazInformacija.Size = new Size(942, 392);
             PrikazInformacija.TabIndex = 1;
             // 
             // Pretraga
             // 
             Pretraga.ForeColor = SystemColors.GrayText;
-            Pretraga.Location = new Point(646, 32);
+            Pretraga.Location = new Point(649, 26);
             Pretraga.Name = "Pretraga";
             Pretraga.Size = new Size(215, 23);
             Pretraga.TabIndex = 2;
@@ -66,7 +67,7 @@ namespace ProjektOOP.Forme
             // 
             // PretragaDugme
             // 
-            PretragaDugme.Location = new Point(876, 31);
+            PretragaDugme.Location = new Point(879, 25);
             PretragaDugme.Name = "PretragaDugme";
             PretragaDugme.Size = new Size(75, 23);
             PretragaDugme.TabIndex = 3;
@@ -77,7 +78,7 @@ namespace ProjektOOP.Forme
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.GradientInactiveCaption;
-            ClientSize = new Size(972, 564);
+            ClientSize = new Size(968, 564);
             Controls.Add(DugmeDodaj);
             Controls.Add(PrikazInformacija);
             Controls.Add(Pretraga);

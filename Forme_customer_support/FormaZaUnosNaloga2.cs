@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ProjektOOP.Forme
 {
-    public partial class FormaZaUnosNaloga3 : Form
+    public partial class FormaZaUnosNaloga2 : Form
     {
-        public FormaZaUnosNaloga3()
+        public FormaZaUnosNaloga2()
         {
             InitializeComponent();
         }

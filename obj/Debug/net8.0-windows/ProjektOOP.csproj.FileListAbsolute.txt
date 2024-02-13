@@ -1,7 +1,8 @@
 C:\Users\Lenovo.DESKTOP-7HJOOS6\Desktop\ProjektOOP\bin\Debug\net8.0-windows\ProjektOOP.exe
+C:\Users\Lenovo.DESKTOP-7HJOOS6\Desktop\ProjektOOP\bin\Debug\net8.0-windows\ProjektOOP.deps.json
+C:\Users\Lenovo.DESKTOP-7HJOOS6\Desktop\ProjektOOP\bin\Debug\net8.0-windows\ProjektOOP.runtimeconfig.json
 C:\Users\Lenovo.DESKTOP-7HJOOS6\Desktop\ProjektOOP\bin\Debug\net8.0-windows\ProjektOOP.dll
-C:\Users\Lenovo.DESKTOP-7HJOOS6\Desktop\ProjektOOP\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
-C:\Users\Lenovo.DESKTOP-7HJOOS6\Desktop\ProjektOOP\bin\Debug\net8.0-windows\Npgsql.dll
+C:\Users\Lenovo.DESKTOP-7HJOOS6\Desktop\ProjektOOP\bin\Debug\net8.0-windows\ProjektOOP.pdb
 C:\Users\Lenovo.DESKTOP-7HJOOS6\Desktop\ProjektOOP\bin\Debug\net8.0-windows\Humanizer.dll
 C:\Users\Lenovo.DESKTOP-7HJOOS6\Desktop\ProjektOOP\bin\Debug\net8.0-windows\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\Lenovo.DESKTOP-7HJOOS6\Desktop\ProjektOOP\bin\Debug\net8.0-windows\Microsoft.CodeAnalysis.dll
@@ -19,9 +20,11 @@ C:\Users\Lenovo.DESKTOP-7HJOOS6\Desktop\ProjektOOP\bin\Debug\net8.0-windows\Micr
 C:\Users\Lenovo.DESKTOP-7HJOOS6\Desktop\ProjektOOP\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 C:\Users\Lenovo.DESKTOP-7HJOOS6\Desktop\ProjektOOP\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyModel.dll
 C:\Users\Lenovo.DESKTOP-7HJOOS6\Desktop\ProjektOOP\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.dll
+C:\Users\Lenovo.DESKTOP-7HJOOS6\Desktop\ProjektOOP\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
 C:\Users\Lenovo.DESKTOP-7HJOOS6\Desktop\ProjektOOP\bin\Debug\net8.0-windows\Microsoft.Extensions.Options.dll
 C:\Users\Lenovo.DESKTOP-7HJOOS6\Desktop\ProjektOOP\bin\Debug\net8.0-windows\Microsoft.Extensions.Primitives.dll
 C:\Users\Lenovo.DESKTOP-7HJOOS6\Desktop\ProjektOOP\bin\Debug\net8.0-windows\Mono.TextTemplating.dll
+C:\Users\Lenovo.DESKTOP-7HJOOS6\Desktop\ProjektOOP\bin\Debug\net8.0-windows\Npgsql.dll
 C:\Users\Lenovo.DESKTOP-7HJOOS6\Desktop\ProjektOOP\bin\Debug\net8.0-windows\Npgsql.EntityFrameworkCore.PostgreSQL.dll
 C:\Users\Lenovo.DESKTOP-7HJOOS6\Desktop\ProjektOOP\bin\Debug\net8.0-windows\System.Composition.AttributedModel.dll
 C:\Users\Lenovo.DESKTOP-7HJOOS6\Desktop\ProjektOOP\bin\Debug\net8.0-windows\System.Composition.Convention.dll
@@ -82,9 +85,10 @@ C:\Users\Lenovo.DESKTOP-7HJOOS6\Desktop\ProjektOOP\bin\Debug\net8.0-windows\tr\M
 C:\Users\Lenovo.DESKTOP-7HJOOS6\Desktop\ProjektOOP\bin\Debug\net8.0-windows\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\Lenovo.DESKTOP-7HJOOS6\Desktop\ProjektOOP\bin\Debug\net8.0-windows\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\Lenovo.DESKTOP-7HJOOS6\Desktop\ProjektOOP\obj\Debug\net8.0-windows\ProjektOOP.csproj.AssemblyReference.cache
-C:\Users\Lenovo.DESKTOP-7HJOOS6\Desktop\ProjektOOP\obj\Debug\net8.0-windows\ProjektOOP.FormaZaUnosNaloga1.resources
+C:\Users\Lenovo.DESKTOP-7HJOOS6\Desktop\ProjektOOP\obj\Debug\net8.0-windows\ProjektOOP.Forma_Serviser.FormaZaPregledNaloga1.resources
+C:\Users\Lenovo.DESKTOP-7HJOOS6\Desktop\ProjektOOP\obj\Debug\net8.0-windows\ProjektOOP.FormaPrijava.resources
+C:\Users\Lenovo.DESKTOP-7HJOOS6\Desktop\ProjektOOP\obj\Debug\net8.0-windows\ProjektOOP.Forme.FormaZaUnosNaloga1.resources
 C:\Users\Lenovo.DESKTOP-7HJOOS6\Desktop\ProjektOOP\obj\Debug\net8.0-windows\ProjektOOP.Forme.FormaZaUnosNaloga2.resources
-C:\Users\Lenovo.DESKTOP-7HJOOS6\Desktop\ProjektOOP\obj\Debug\net8.0-windows\ProjektOOP.Forme.FormaZaUnosNaloga3.resources
 C:\Users\Lenovo.DESKTOP-7HJOOS6\Desktop\ProjektOOP\obj\Debug\net8.0-windows\ProjektOOP.csproj.GenerateResource.cache
 C:\Users\Lenovo.DESKTOP-7HJOOS6\Desktop\ProjektOOP\obj\Debug\net8.0-windows\ProjektOOP.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Lenovo.DESKTOP-7HJOOS6\Desktop\ProjektOOP\obj\Debug\net8.0-windows\ProjektOOP.AssemblyInfoInputs.cache
@@ -95,8 +99,5 @@ C:\Users\Lenovo.DESKTOP-7HJOOS6\Desktop\ProjektOOP\obj\Debug\net8.0-windows\Proj
 C:\Users\Lenovo.DESKTOP-7HJOOS6\Desktop\ProjektOOP\obj\Debug\net8.0-windows\ProjektOOP.dll
 C:\Users\Lenovo.DESKTOP-7HJOOS6\Desktop\ProjektOOP\obj\Debug\net8.0-windows\refint\ProjektOOP.dll
 C:\Users\Lenovo.DESKTOP-7HJOOS6\Desktop\ProjektOOP\obj\Debug\net8.0-windows\ProjektOOP.pdb
-C:\Users\Lenovo.DESKTOP-7HJOOS6\Desktop\ProjektOOP\bin\Debug\net8.0-windows\ProjektOOP.deps.json
-C:\Users\Lenovo.DESKTOP-7HJOOS6\Desktop\ProjektOOP\bin\Debug\net8.0-windows\ProjektOOP.runtimeconfig.json
-C:\Users\Lenovo.DESKTOP-7HJOOS6\Desktop\ProjektOOP\bin\Debug\net8.0-windows\ProjektOOP.pdb
 C:\Users\Lenovo.DESKTOP-7HJOOS6\Desktop\ProjektOOP\obj\Debug\net8.0-windows\ProjektOOP.genruntimeconfig.cache
 C:\Users\Lenovo.DESKTOP-7HJOOS6\Desktop\ProjektOOP\obj\Debug\net8.0-windows\ref\ProjektOOP.dll

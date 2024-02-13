@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Update="Forme\FormaZaUnosNaloga2.cs" />
+    <Compile Update="Forme_customer_support\FormaZaUnosNaloga1.cs" />
   </ItemGroup>
 
   <ItemGroup>

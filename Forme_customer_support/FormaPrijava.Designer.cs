@@ -12,7 +12,7 @@ using static System.Windows.Forms.DataFormats;
 
 namespace ProjektOOP
 {
-    partial class FormaZaUnosNaloga1 : Form
+    partial class FormaPrijava : Form
     {
         private System.ComponentModel.IContainer components = null;
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
@@ -115,7 +115,7 @@ namespace ProjektOOP
             MaximizeBox = false;
             Name = "FormaZaUnosNaloga1";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Forma za unos naloga";
+            Text = "Forma za prijavu";
             ResumeLayout(false);
             PerformLayout();
         }
@@ -155,16 +155,55 @@ namespace ProjektOOP
                 }
             }
         }
+        private string DohvatiKategorijuKorisnika(string korisnickoIme)
+        {
+            try
+            {
+                conn.Open();
+                sql = " SELECT * FROM DohvatiKategorijuDinamicki(@imeKorisnika);";
+                cmd = new NpgsqlCommand(sql, conn);
+
+                cmd.Parameters.AddWithValue("@imeKorisnika", korisnickoIme);
+
+                object result = cmd.ExecuteScalar();
+                return result != null ? result.ToString() : null;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+        private void OtvoriProzorCSSektora()
+        {
+
+            FormaZaUnosNaloga1 csProzor = new FormaZaUnosNaloga1();
+            csProzor.Show();
+        }
+
+        private void OtvoriProzorSERSektora()
+        {
+            Forma_Serviser.FormaZaPregledNaloga1 serProzor = new Forma_Serviser.FormaZaPregledNaloga1();
+            serProzor.Show();
+        }
         private void ButtonPrihvati_Click(object sender, EventArgs e)
         {
             string unesenoKorisnickoIme = korisnickoIme.Text;
             string unesenaLozinka = korisnickaLozinka.Text;
             if (ProvjeraKorisnikaUBazi(unesenoKorisnickoIme, unesenaLozinka))
             {
-                FormaZaUnosNaloga2 forma = new FormaZaUnosNaloga2();
-                forma.Show();
-                forma.FormClosed += BrisanjePozadine;
-                this.Hide();
+                string kategorija = DohvatiKategorijuKorisnika(unesenoKorisnickoIme);
+                if (kategorija=="CS ")
+                {
+                    OtvoriProzorCSSektora();
+                }
+                else if (kategorija=="SER")
+                {
+                    OtvoriProzorSERSektora();
+                }
+                else
+                {
+                    MessageBox.Show("SQL!", "Neuspješna prijava", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {
@@ -172,7 +211,7 @@ namespace ProjektOOP
             }
         }
         private void CheckBoxPrikaziZaporku_CheckedChanged(object sender, EventArgs e)
-        {
+                 {
             if (PrikaziZaporku.Checked)
             {
                 korisnickaLozinka.PasswordChar = '\0';

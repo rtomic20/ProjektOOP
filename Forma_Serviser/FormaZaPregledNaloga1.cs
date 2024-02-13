@@ -8,17 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ProjektOOP.Forme
+namespace ProjektOOP.Forma_Serviser
 {
-    public partial class FormaZaUnosNaloga2 : Form
+    public partial class FormaZaPregledNaloga1 : Form
     {
-        public FormaZaUnosNaloga2()
+        public FormaZaPregledNaloga1()
         {
             InitializeComponent();
-        }
-
-        private void Pretraga_TextChanged(object sender, EventArgs e)
-        {
         }
     }
 }

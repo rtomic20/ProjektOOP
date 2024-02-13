@@ -7,7 +7,7 @@
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            FormaZaUnosNaloga1 formaZaUnosNaloga = new FormaZaUnosNaloga1();
+            FormaPrijava formaZaUnosNaloga = new FormaPrijava();
             Application.Run(formaZaUnosNaloga);
         }
     }

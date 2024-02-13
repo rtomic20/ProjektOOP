@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ProjektOOP
 {
-    public partial class FormaZaUnosNaloga1 : Form
+    public partial class FormaPrijava : Form
     {
-        public FormaZaUnosNaloga1()
+        public FormaPrijava()
         {
             InitializeComponent();
         }

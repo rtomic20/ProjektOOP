@@ -5,7 +5,7 @@ using Npgsql;
 using System.Data;
 namespace ProjektOOP.Forme
 {
-    partial class FormaZaUnosNaloga2 : Form
+    partial class FormaZaUnosNaloga1 : Form
     {
         private System.ComponentModel.IContainer components = null;
 
@@ -38,7 +38,7 @@ namespace ProjektOOP.Forme
             // 
             // DugmeDodaj
             // 
-            DugmeDodaj.Location = new Point(879, 493);
+            DugmeDodaj.Location = new Point(1077, 492);
             DugmeDodaj.Name = "DugmeDodaj";
             DugmeDodaj.Size = new Size(75, 23);
             DugmeDodaj.TabIndex = 0;
@@ -47,16 +47,16 @@ namespace ProjektOOP.Forme
             // 
             // PrikazInformacija
             // 
-            PrikazInformacija.Location = new Point(12, 70);
+            PrikazInformacija.Location = new Point(11, 69);
             PrikazInformacija.Name = "PrikazInformacija";
             PrikazInformacija.ScrollBars = ScrollBars.None;
-            PrikazInformacija.Size = new Size(942, 392);
+            PrikazInformacija.Size = new Size(1141, 392);
             PrikazInformacija.TabIndex = 1;
             // 
             // Pretraga
             // 
             Pretraga.ForeColor = SystemColors.GrayText;
-            Pretraga.Location = new Point(649, 26);
+            Pretraga.Location = new Point(847, 25);
             Pretraga.Name = "Pretraga";
             Pretraga.Size = new Size(215, 23);
             Pretraga.TabIndex = 2;
@@ -67,27 +67,28 @@ namespace ProjektOOP.Forme
             // 
             // PretragaDugme
             // 
-            PretragaDugme.Location = new Point(879, 25);
+            PretragaDugme.Location = new Point(1077, 24);
             PretragaDugme.Name = "PretragaDugme";
             PretragaDugme.Size = new Size(75, 23);
             PretragaDugme.TabIndex = 3;
             PretragaDugme.Text = "Pretraga";
             // 
-            // FormaZaUnosNaloga2
+            // FormaZaUnosNaloga1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.GradientInactiveCaption;
-            ClientSize = new Size(968, 564);
+            ClientSize = new Size(1173, 564);
             Controls.Add(DugmeDodaj);
             Controls.Add(PrikazInformacija);
             Controls.Add(Pretraga);
             Controls.Add(PretragaDugme);
             ForeColor = SystemColors.Highlight;
             MaximizeBox = false;
-            Name = "FormaZaUnosNaloga2";
+            Name = "FormaZaUnosNaloga1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Ispis naloga";
+            Load += FormaZaUnosNaloga1_Load;
             ((System.ComponentModel.ISupportInitialize)PrikazInformacija).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -103,7 +104,7 @@ namespace ProjektOOP.Forme
             try
             {
                 conn.Open();
-                sql=@"SELECT * FROM UcitajPodatke();";
+                sql=@"SELECT * FROM nalog ORDER BY id_naloga;";
                 cmd=new NpgsqlCommand(sql, conn);
                 dt = new DataTable();
                 dt.Load(cmd.ExecuteReader());
@@ -120,7 +121,7 @@ namespace ProjektOOP.Forme
         }
         private void DodajElementUBazu(object sender, EventArgs e)
         {
-            FormaZaUnosNaloga3 forma = new FormaZaUnosNaloga3();
+            FormaZaUnosNaloga2 forma = new FormaZaUnosNaloga2();
             forma.Show();
         }
         private void Pretraga_Unos(object sender, EventArgs e)

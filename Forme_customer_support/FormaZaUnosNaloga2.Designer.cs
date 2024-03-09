@@ -37,13 +37,13 @@ namespace ProjektOOP.Forme
             prezime = new Label();
             adresa_stanovanja = new Label();
             grad_stanovanja = new Label();
-            sifra_proizvoda = new Label();
+            model_proizvoda = new Label();
             Greska = new TextBox();
-            Ime_krosinika = new TextBox();
+            Ime_korisinika = new TextBox();
             Prezime_korisnika = new TextBox();
             Adresa_stanovanja_korisnika = new TextBox();
             Grad_stanovanja_korisnika = new TextBox();
-            Sifra_proizvoda_korisnika = new TextBox();
+            Model_proizvoda_korisnika = new TextBox();
             Prihvati_Unos = new Button();
             Serviseri = new ComboBox();
             odabir_SER = new Label();
@@ -117,11 +117,11 @@ namespace ProjektOOP.Forme
             // 
             // sifra_proizvoda
             // 
-            sifra_proizvoda.Location = new Point(130, 343);
-            sifra_proizvoda.Name = "sifra_proizvoda";
-            sifra_proizvoda.Size = new Size(100, 23);
-            sifra_proizvoda.TabIndex = 8;
-            sifra_proizvoda.Text = "Sifra proizvoda:";
+            model_proizvoda.Location = new Point(130, 343);
+            model_proizvoda.Name = "model_proizvoda";
+            model_proizvoda.Size = new Size(100, 23);
+            model_proizvoda.TabIndex = 8;
+            model_proizvoda.Text = "Model proizvoda:";
             // 
             // Greska
             // 
@@ -133,11 +133,11 @@ namespace ProjektOOP.Forme
             // 
             // Ime_krosinika
             // 
-            Ime_krosinika.Location = new Point(129, 421);
-            Ime_krosinika.Multiline = true;
-            Ime_krosinika.Name = "Ime_krosinika";
-            Ime_krosinika.Size = new Size(191, 65);
-            Ime_krosinika.TabIndex = 10;
+            Ime_korisinika.Location = new Point(129, 421);
+            Ime_korisinika.Multiline = true;
+            Ime_korisinika.Name = "Ime_krosinika";
+            Ime_korisinika.Size = new Size(191, 65);
+            Ime_korisinika.TabIndex = 10;
             // 
             // Prezime_korisnika
             // 
@@ -164,10 +164,10 @@ namespace ProjektOOP.Forme
             // 
             // Sifra_proizvoda_korisnika
             // 
-            Sifra_proizvoda_korisnika.Location = new Point(130, 369);
-            Sifra_proizvoda_korisnika.Name = "Sifra_proizvoda_korisnika";
-            Sifra_proizvoda_korisnika.Size = new Size(130, 23);
-            Sifra_proizvoda_korisnika.TabIndex = 14;
+            Model_proizvoda_korisnika.Location = new Point(130, 369);
+            Model_proizvoda_korisnika.Name = "Model_proizvoda_korisnika";
+            Model_proizvoda_korisnika.Size = new Size(130, 23);
+            Model_proizvoda_korisnika.TabIndex = 14;
             // 
             // Prihvati_Unos
             // 
@@ -222,14 +222,14 @@ namespace ProjektOOP.Forme
             Controls.Add(prezime);
             Controls.Add(adresa_stanovanja);
             Controls.Add(grad_stanovanja);
-            Controls.Add(sifra_proizvoda);
+            Controls.Add(model_proizvoda);
             Controls.Add(opis_greske);
             Controls.Add(Greska);
-            Controls.Add(Ime_krosinika);
+            Controls.Add(Ime_korisinika);
             Controls.Add(Prezime_korisnika);
             Controls.Add(Adresa_stanovanja_korisnika);
             Controls.Add(Grad_stanovanja_korisnika);
-            Controls.Add(Sifra_proizvoda_korisnika);
+            Controls.Add(Model_proizvoda_korisnika);
             Controls.Add(Prihvati_Unos);
             Controls.Add(Serviseri);
             Controls.Add(odabir_SER);
@@ -247,34 +247,36 @@ namespace ProjektOOP.Forme
         {
             try
             {
-                using (conn = new NpgsqlConnection(Connection))
+                using (NpgsqlConnection connection = new NpgsqlConnection(Connection))
                 {
-                    conn.Open();
+                    connection.Open();
 
-                    using (cmd = new NpgsqlCommand("unos_naloga", conn))
+                    using (NpgsqlCommand cmd = new NpgsqlCommand())
                     {
-                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Connection = connection;
+                        cmd.CommandText = "unos_naloga";
+                        cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
-                        // Set the parameters for the stored procedure
-                        cmd.Parameters.AddWithValue("p_Garancija", garancija_Da.Checked ? "Da" : "Ne");
-                        cmd.Parameters.AddWithValue("p_Ime_Korisnika", Ime_krosinika.Text);
-                        cmd.Parameters.AddWithValue("p_Prezime_Korisnika", Prezime_korisnika.Text);
-                        cmd.Parameters.AddWithValue("p_Broj_korisnika", Convert.ToInt64(Korisnicki_broj.Text));
-                        cmd.Parameters.AddWithValue("p_Adresa_stanovanja", Adresa_stanovanja_korisnika.Text);
-                        cmd.Parameters.AddWithValue("p_Grad_stanovanja", Grad_stanovanja_korisnika.Text);
-                        cmd.Parameters.AddWithValue("p_Sifra_proizvoda", Convert.ToInt64(Sifra_proizvoda_korisnika.Text));
-                        cmd.Parameters.AddWithValue("p_Opis_Greske", Greska.Text);
-                        cmd.Parameters.AddWithValue("p_Serviser", Serviseri.SelectedItem.ToString());
+                        // Dodajte parametre funkcije
+                        cmd.Parameters.AddWithValue("Garancija", garancija_Da.Checked ? "Da" : (garancija_Ne.Checked ? "Ne" : ""));
+                        cmd.Parameters.AddWithValue("Ime_Korisnika", Ime_korisinika.Text);
+                        cmd.Parameters.AddWithValue("Prezime_Korisnika", Prezime_korisnika.Text);
+                        cmd.Parameters.AddWithValue("Broj_korisnika", Convert.ToInt64(Korisnicki_broj.Text));
+                        cmd.Parameters.AddWithValue("Adresa_stanovanja", Adresa_stanovanja_korisnika.Text);
+                        cmd.Parameters.AddWithValue("Grad_stanovanja", Grad_stanovanja_korisnika.Text.ToString());
+                        cmd.Parameters.AddWithValue("Model_proizvoda", Model_proizvoda_korisnika.Text.ToString());
+                        cmd.Parameters.AddWithValue("Opis_Greske", Greska.Text);
+                        cmd.Parameters.AddWithValue("Serviser", Serviseri.SelectedItem.ToString());
 
-                        // Execute the stored procedure
                         cmd.ExecuteNonQuery();
+
+                        MessageBox.Show("Nalog uspješno spremljen.");
                     }
                 }
-                MessageBox.Show("Nalog uspješno unesen.");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Greška prilikom unosa naloga: " + ex.Message);
+                MessageBox.Show("Greška: " + ex.Message);
             }
         }
         #endregion
@@ -286,16 +288,16 @@ namespace ProjektOOP.Forme
         private System.Windows.Forms.Label prezime;
         private System.Windows.Forms.Label adresa_stanovanja;
         private System.Windows.Forms.Label grad_stanovanja;
-        private System.Windows.Forms.Label sifra_proizvoda;
+        private System.Windows.Forms.Label model_proizvoda;
         private System.Windows.Forms.Label odabir_SER;
         private System.Windows.Forms.Label broj_korisnika;
         private System.Windows.Forms.TextBox Korisnicki_broj;
         private System.Windows.Forms.TextBox Greska;
-        private System.Windows.Forms.TextBox Ime_krosinika;
+        private System.Windows.Forms.TextBox Ime_korisinika;
         private System.Windows.Forms.TextBox Prezime_korisnika;
         private System.Windows.Forms.TextBox Adresa_stanovanja_korisnika;
         private System.Windows.Forms.TextBox Grad_stanovanja_korisnika;
-        private System.Windows.Forms.TextBox Sifra_proizvoda_korisnika;
+        private System.Windows.Forms.TextBox Model_proizvoda_korisnika;
         private System.Windows.Forms.Button Prihvati_Unos;
         private System.Windows.Forms.ComboBox Serviseri;
     }
